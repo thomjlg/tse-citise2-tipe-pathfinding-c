@@ -274,7 +274,7 @@ void existence_chemin(unsigned int tab[50][50], unsigned int i, unsigned int j, 
                     }
                 }
 
-                if (puissance_tab2[i - 1][j - 1] != 0) {
+                if (puissance_tab3[i - 1][j - 1] != 0) {
                     cout << " \nCONCLUSION :\n Chemin existant entre les sommets " << i << " et " << j << "." << endl;
                     //cout << "\n\nAffichage de la matrice a l'ordre " << t - 1;
                     //afficher_matrice(puissance_tab, rang);
