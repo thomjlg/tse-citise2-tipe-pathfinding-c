@@ -17,3 +17,6 @@ struct valeurs_a_retouner {
 };
 
 
+
+unsigned int rechercheLoop(unsigned int tab1[50][50], unsigned int tab2[50][50], unsigned int, unsigned int, unsigned int);
+

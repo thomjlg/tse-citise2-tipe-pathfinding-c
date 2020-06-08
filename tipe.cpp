@@ -223,6 +223,7 @@ void existence_chemin(unsigned int tab[50][50], unsigned int i, unsigned int j, 
     }
     else {    // (tab[i - 1][j - 1] == 0)
         cout << endl << " Chemin direct entre les sommets " << i << " et " << j << " inexistant.\n Poursuite des recherches en cours ..." << endl;
+//              boucle 1
             unsigned int p, q, r;
             for (p = 0; p < rang; p++)
             {
@@ -243,6 +244,7 @@ void existence_chemin(unsigned int tab[50][50], unsigned int i, unsigned int j, 
             dijkstra(tab, i - 1, j - 1,rang);
         }
         else {
+//            boucle 2
             unsigned int s, t, u;
             for (s = 0; s < rang; s++)
             {
@@ -262,6 +264,7 @@ void existence_chemin(unsigned int tab[50][50], unsigned int i, unsigned int j, 
                 dijkstra(tab, i - 1, j - 1, rang);
             }
             else {
+//            boucle 3
                 unsigned int aaa, ttt, uuu;
                 for (aaa = 0; aaa < rang; aaa++)
                 {
@@ -288,7 +291,48 @@ void existence_chemin(unsigned int tab[50][50], unsigned int i, unsigned int j, 
     }
     cout << endl;
     choix(tab,rang);
+    
+    
+    
+    
+    
+    
+    
+    unsigned int puissanceSuccessive[50][50];
+    initialisation_matrice_0(puissanceSuccessive);
+    
+    puissanceSuccessive = rechercheLoop(tab[50][50],puissanceSuccessive[50][50], rang, i, j)
+    while(puissanceSuccessive[i - 1][j - 1] == 0){
+        puissanceSuccessive1[50][50] = rechercheLoop(tab[50][50], puissanceSuccessive[50][50], rang, i, j)
+    }
+
+    
+    
+    
+    
 }
+
+
+unsigned int rechercheLoop(unsigned int tab1[50][50], unsigned int tab2[50][50], unsigned int rang, unsigned int i, unsigned int j){
+    unsigned int successivePower[50][50];
+    unsigned int s, t, u;
+    
+    for (s = 0; s < rang; s++) {
+        for (t = 0; t < rang; t++) {
+            for (u = 0; u < rang; u++) {
+                successivePower[s][t] += tab1[s][u] * tab2[u][t];
+            }
+        }
+    }
+    return successivePower[50][50];
+}
+
+
+
+
+
+
+
 /////////////// FIN CALCUL DE L'EXISTENCE D'UN CHEMIN ///////////////////////////////////////////
 
 /////////////// CHANGER RANG ///////////////////////////////////////////
